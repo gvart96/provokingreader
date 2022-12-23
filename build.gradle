@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'md.gvart'
+version '1.0-SNAPSHOT'
+
+subprojects {
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation(platform("io.vertx:vertx-stack-depchain:$vertxBom"))
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+        implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
+        implementation("org.slf4j:slf4j-api:2.0.6")
+
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+
+
+//tasks.withType(JavaCompile) {
+//    options.encoding = 'UTF-8'
+//}

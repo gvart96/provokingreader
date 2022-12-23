@@ -1,0 +1,4 @@
+rootProject.name = "xrssreader"
+
+include 'engine'
+include 'desktop'

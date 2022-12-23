@@ -1,0 +1,7 @@
+dependencies {
+    implementation "io.vertx:vertx-jdbc-client"
+    implementation "com.apptasticsoftware:rssreader:$rssReaderVersion"
+    implementation "com.google.inject:guice:5.1.0"
+    implementation("org.xerial:sqlite-jdbc:3.40.0.0")
+    implementation("org.flywaydb:flyway-core:9.10.2")
+}
