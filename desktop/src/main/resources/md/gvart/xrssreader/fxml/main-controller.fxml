@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="md.gvart.xrssreader.view.MainController">
+
+
+    <left>
+        <VBox styleClass="sidebar">
+            <padding>
+                <Insets bottom="10.0" left="10.0" top="60.0"/>
+            </padding>
+            <Label graphicTextGap="15.0" styleClass="header" text="MaterialFX">
+                <graphic>
+                    <MFXFontIcon description="mfx-logo" size="52.0"/>
+                </graphic>
+            </Label>
+            <MFXScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                <ImageView fitHeight="50">
+                    <Image url="https://martinfowler.com/favicon.ico"/>
+                </ImageView>
+
+                <VBox.margin>
+                    <Insets bottom="10.0" left="5.0" top="15.0"/>
+                </VBox.margin>
+                <padding>
+                    <Insets right="10.0"/>
+                </padding>
+                <VBox fx:id="navBar" spacing="5.0" styleClass="navbar">
+                    <MFXProgressSpinner fx:id="spinner"/>
+                    <VBox fx:id="subscriptions"></VBox>
+                </VBox>
+            </MFXScrollPane>
+        </VBox>
+
+    </left>
+
+    <center>
+        <MFXScrollPane fitToWidth="true">
+            <StackPane fx:id="contentArea"/>
+        </MFXScrollPane>
+    </center>
+</BorderPane>
+

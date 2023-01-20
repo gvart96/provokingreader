@@ -6,5 +6,5 @@ import java.util.function.Function;
 
 public interface ComponentProvider  {
 
-    <T> Parent provide(Class<T> clazz);
+    <T extends Parent> T provide(Class<T> clazz);
 }

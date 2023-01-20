@@ -20,9 +20,6 @@ public class EngineFacadeFactory {
 
     private static EngineFacade setupLocalInfrastructure() {
         var injector = Guice.createInjector(new SqlLiteModule());
-        var vertx = injector.getInstance(Vertx.class);
-        var subscriptionCreatedListener = injector.getInstance(SubscriptionCreatedListener.class);
-        vertx.deployVerticle(subscriptionCreatedListener);
 
         return injector.getInstance(EngineFacade.class);
     }

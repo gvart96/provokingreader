@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="md.gvart.xrssreader.view.FeedController">
+
+    <FlowPane fx:id="content">
+        <Label text="it works" />
+    </FlowPane>
+</HBox>
+

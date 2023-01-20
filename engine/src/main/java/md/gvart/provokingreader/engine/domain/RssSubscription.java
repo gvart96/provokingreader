@@ -1,11 +1,13 @@
 package md.gvart.provokingreader.engine.domain;
 
+import java.io.Serializable;
+
 public record RssSubscription(
         int id,
         String title,
         String feedUrl,
         String logoUrl
-) {
+) implements Serializable {
 
     public static RssSubscription intermediate(String title,
                                         String feedUrl,

@@ -38,8 +38,8 @@ public class DefaultRssDiscoverer implements RssDiscoverer {
                     var channel = it.getChannel();
                     return RssSubscription.intermediate(
                             channel.getTitle(),
-                            channel.getDescription(),
-                            channel.getImage().map(Image::getLink).orElse("")
+                            url,
+                            channel.getLink() + "/favicon.ico"
                     );
                 }).orElseThrow();
 

@@ -1,4 +1,4 @@
-rootProject.name = "xrssreader"
+rootProject.name = "provokingreader"
 
 include 'engine'
 include 'desktop'

@@ -2,6 +2,7 @@ package md.gvart.provokingreader.engine.eventbus;
 
 import com.google.inject.Inject;
 import io.vertx.core.Future;
+import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
@@ -22,5 +23,16 @@ public class VertxEventBus implements EventBus {
     @Override
     public void publish(Channel channel, Map<String, Object> params) {
         vertx.eventBus().publish(channel.getAddress(), new JsonObject(params));
+    }
+
+    @Override
+    public <T> void publish(Channel channel, T params) {
+        vertx.eventBus().publish(channel.getAddress(), params);
+
+    }
+
+    @Override
+    public <T> void subscribe(Channel channel, Handler<T> handler) {
+        vertx.eventBus().<T>consumer(channel.getAddress(), it -> handler.handle(it.body()));
     }
 }

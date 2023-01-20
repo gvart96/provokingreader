@@ -25,6 +25,8 @@ dependencies {
         exclude(group: 'org.openjfx')
     }
     implementation 'io.github.palexdev:materialfx:11.13.5'
+    implementation 'com.twelvemonkeys.imageio:imageio-bmp:3.9.4'
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

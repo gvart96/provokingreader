@@ -21,4 +21,6 @@ module engine {
     opens md.gvart.provokingreader.engine.sqllite;
     opens md.gvart.provokingreader.engine.sqllite.mapper;
     opens db.migration;
+    exports md.gvart.provokingreader.engine.context.registrar;
+    opens md.gvart.provokingreader.engine.context.registrar;
 }
